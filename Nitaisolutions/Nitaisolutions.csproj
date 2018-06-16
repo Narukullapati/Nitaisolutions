@@ -144,6 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PortalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,8 +155,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\admin4b-highlight.min.css" />
     <Content Include="css\admin4b.min.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\creative.css" />
     <Content Include="css\creative.min.css" />
+    <Content Include="css\demo.css" />
     <Content Include="css\demo.css" />
     <Content Include="css\easyWizard.css" />
     <Content Include="css\fonts\BebasNeue-webfont.svg" />
@@ -165,6 +168,8 @@
     <Content Include="css\style2.css" />
     <Content Include="css\style3.css" />
     <Content Include="css\style4.css" />
+    <Content Include="css\themify-icons-demo.css" />
+    <Content Include="css\themify-icons.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -178,13 +183,19 @@
     <Content Include="images\6.jpg" />
     <Content Include="images\DSC00471.JPG" />
     <Content Include="images\ImagesByMarkSebastian.txt" />
+    <Content Include="images\logo.PNG" />
     <Content Include="images\pattern.png" />
     <Content Include="images\user-photo.png" />
     <Content Include="js\admin4b.min.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\creative.js" />
     <Content Include="js\creative.min.js" />
     <Content Include="js\easyWizard.js" />
+    <Content Include="js\jquery-2.2.4.min.js" />
+    <Content Include="js\jquery.bootstrap.wizard.js" />
+    <Content Include="js\jquery.validate.min.js" />
     <Content Include="js\modernizr.custom.86080.js" />
+    <Content Include="js\paper-bootstrap-wizard.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -219,8 +230,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Consultation.cshtml" />
+    <Content Include="Views\Portal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,5 +26,17 @@ namespace Nitaisolutions.Controllers
 
             return View();
         }
+        public ActionResult Dashboard()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Consultation()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
