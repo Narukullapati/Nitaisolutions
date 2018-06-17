@@ -1,6 +1,8 @@
 ﻿
+
 @{
     Layout = null;
+    ViewBag.Title = "";
 }
 
 <!DOCTYPE html>
@@ -35,49 +37,49 @@
     <link href="~/css/creative.css" rel="stylesheet">
     <script>
 
-	$(document).ready(function () {
+        $(document).ready(function () {
 
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+            var navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.nextBtn');
 
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-                $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
             allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
 
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
-            isValid = true;
+            navListItems.click(function (e) {
+                e.preventDefault();
+                var $target = $($(this).attr('href')),
+                    $item = $(this);
 
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
+                if (!$item.hasClass('disabled')) {
+                    navListItems.removeClass('btn-primary').addClass('btn-default');
+                    $item.addClass('btn-primary');
+                    allWells.hide();
+                    $target.show();
+                    $target.find('input:eq(0)').focus();
+                }
+            });
 
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
-    });
+            allNextBtn.click(function () {
+                var curStep = $(this).closest(".setup-content"),
+                    curStepBtn = curStep.attr("id"),
+                    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                    curInputs = curStep.find("input[type='text'],input[type='url']"),
+                    isValid = true;
 
-    $('div.setup-panel div a.btn-primary').trigger('click');
-});
+                $(".form-group").removeClass("has-error");
+                for (var i = 0; i < curInputs.length; i++) {
+                    if (!curInputs[i].validity.valid) {
+                        isValid = false;
+                        $(curInputs[i]).closest(".form-group").addClass("has-error");
+                    }
+                }
+
+                if (isValid)
+                    nextStepWizard.removeAttr('disabled').trigger('click');
+            });
+
+            $('div.setup-panel div a.btn-primary').trigger('click');
+        });
 
     </script>
 </head>
@@ -104,13 +106,24 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
-                  
+
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Consultation", "Home", new { id = "Admin" }) target="_blank" )>Consultation</a>
+
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Consultation", "Home") " target="_blank">
+                            <span>CONSULTATION</span>
+                        </a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Login", new { id = "Admin" }) target="_blank" )>Login</a>
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Signin", "Home") " target="_blank">
+                            <span>Sign In</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="@Url.Action("Signup", "Home") " target="_blank">
+                            <span>Registration</span>
+                        </a>
 
                     </li>
                 </ul>
@@ -141,7 +154,7 @@
                     <h2 class="section-heading text-white">Complete Package for your Educational & Career Decisions at every Phase.</h2>
                     <hr class="light my-4">
                     <p class="text-faded mb-4">Do you struggle with knowing which academic path is right for you? Are you driven to transition into a career that takes advantage of your unique strengths, passions, and experiences, here we will give the best Career Solutions at each phase</p>
-                    <a class="btn btn-light btn-xl js-scroll-trigger" href="Consultation.html">CONSULTATIONS</a>
+
                 </div>
             </div>
         </div>
@@ -190,9 +203,7 @@
         </div>
     </section>
 
-    <section class="p-0" id="portfolio">
-        
-    </section>
+    <section class="p-0" id="portfolio"></section>
 
 
 
@@ -268,6 +279,10 @@
             </div>
         </div>
     </div>
+
+
+   
+
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
